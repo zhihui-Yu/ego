@@ -188,5 +188,6 @@
 		<module>service-impl</module>
 		<module>commons</module>
 		<module>manage</module>
+		<module>item</module>
 	</modules>
 </project>
