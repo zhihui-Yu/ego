@@ -35,7 +35,7 @@ public class PicServiceImpl implements PicService {
 	
 	@Override
 	public Map<String, Object> upload(MultipartFile file) throws IOException {
-		String genImageName = IDUtils.genImageName()+file.getOriginalFilename().lastIndexOf(".");
+		String genImageName = IDUtils.genImageName()+file.getOriginalFilename().substring(file.getOriginalFilename().lastIndexOf(".")+1);
 		boolean result = FtpUtil.uploadFile(host, port, username, password, basePath, filePath, genImageName, file.getInputStream());
 		Map<String, Object> map = new HashMap<>();
 		if(result) {

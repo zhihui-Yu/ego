@@ -15,5 +15,5 @@
     <!-- 注解扫描 -->
     <context:component-scan base-package="com.ego.*.service.impl"></context:component-scan>
     <!-- 扫描属性文件  全项目只有一个 -->
-    <context:property-placeholder location="classpath*:commons.properties"/>
+    <context:property-placeholder location="classpath*:*.properties"/>
 </beans>

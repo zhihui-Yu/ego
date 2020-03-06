@@ -14,5 +14,10 @@
 			<groupId>commons-net</groupId>
 			<artifactId>commons-net</artifactId>
 		</dependency>
+		<!-- jackson -->
+		<dependency>
+			<groupId>com.fasterxml.jackson.core</groupId>
+			<artifactId>jackson-databind</artifactId>
+		</dependency>
 	</dependencies>
 </project>

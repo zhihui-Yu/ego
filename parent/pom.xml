@@ -189,5 +189,6 @@
 		<module>commons</module>
 		<module>manage</module>
 		<module>item</module>
+		<module>redis</module>
 	</modules>
 </project>

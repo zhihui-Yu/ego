@@ -8,6 +8,6 @@ public class PageController {
 
 	@RequestMapping("/")
 	public String welCome(){
-		return "index";
+		return "forward:/showBigPic";
 	}
 }
