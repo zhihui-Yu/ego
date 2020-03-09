@@ -6,6 +6,7 @@
 	<version>0.0.1-SNAPSHOT</version>
 	<packaging>pom</packaging>
 	<properties>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<servlet-version>3.0.1</servlet-version>
 		<jsp-version>2.2</jsp-version>
 		<jstl-version>1.2</jstl-version>
@@ -23,9 +24,23 @@
 		<tomcat-version>2.2</tomcat-version>
 		<pagehelper-version>4.1.6</pagehelper-version>
 		<ftpclient-version>3.3</ftpclient-version>
+		<solr-version>5.3.1</solr-version>
+		<httpclient-version>4.4.1</httpclient-version>
 	</properties>
 	<dependencyManagement>
 		<dependencies>
+			<!-- httpclient -->
+			<dependency>
+				<groupId>org.apache.httpcomponents</groupId>
+				<artifactId>httpclient</artifactId>
+				<version>${httpclient-version}</version>
+			</dependency>
+			<!-- solr -->
+			<dependency>
+				<groupId>org.apache.solr</groupId>
+				<artifactId>solr-solrj</artifactId>
+				<version>${solr-version}</version>
+			</dependency>
 			<!-- ftpClient -->
 			<dependency>
 				<groupId>commons-net</groupId>
@@ -150,8 +165,8 @@
 			</resource>
 		</resources>
 		<pluginManagement>
-            <plugins>
-                <!-- 配置Tomcat插件 -->
+			<plugins>
+				<!-- 配置Tomcat插件 -->
 				<plugin>
 					<groupId>org.apache.tomcat.maven</groupId>
 					<artifactId>tomcat7-maven-plugin</artifactId>
@@ -164,31 +179,21 @@
 			</plugins>
 		</pluginManagement>
 	</build>
-<!-- 	<pluginRepositories>
-        <pluginRepository>
-            <id>alfresco-public</id>
-            <url>https://artifacts.alfresco.com/nexus/content/groups/public</url>
-        </pluginRepository>
-        <pluginRepository>
-            <id>alfresco-public-snapshots</id>
-            <url>https://artifacts.alfresco.com/nexus/content/groups/public-snapshots</url>
-            <snapshots>
-                <enabled>true</enabled>
-                <updatePolicy>daily</updatePolicy>
-            </snapshots>
-        </pluginRepository>
-        <pluginRepository>
-            <id>beardedgeeks-releases</id>
-            <url>http://beardedgeeks.googlecode.com/svn/repository/releases</url>
-        </pluginRepository>
-    </pluginRepositories> -->
+	<!-- <pluginRepositories> <pluginRepository> <id>alfresco-public</id> <url>https://artifacts.alfresco.com/nexus/content/groups/public</url> 
+		</pluginRepository> <pluginRepository> <id>alfresco-public-snapshots</id> 
+		<url>https://artifacts.alfresco.com/nexus/content/groups/public-snapshots</url> 
+		<snapshots> <enabled>true</enabled> <updatePolicy>daily</updatePolicy> </snapshots> 
+		</pluginRepository> <pluginRepository> <id>beardedgeeks-releases</id> <url>http://beardedgeeks.googlecode.com/svn/repository/releases</url> 
+		</pluginRepository> </pluginRepositories> -->
 	<modules>
+		<module>manage</module>
 		<module>pojo</module>
+		<module>portal</module>
 		<module>service</module>
 		<module>service-impl</module>
-		<module>commons</module>
-		<module>manage</module>
 		<module>item</module>
 		<module>redis</module>
+		<module>search</module>
+		<module>commons</module>
 	</modules>
 </project>
