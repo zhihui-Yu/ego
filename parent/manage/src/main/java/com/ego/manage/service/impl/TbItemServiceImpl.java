@@ -4,6 +4,8 @@ import java.util.Date;
 import java.util.HashMap;
 import java.util.Map;
 
+import javax.annotation.Resource;
+
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
 
@@ -17,6 +19,7 @@ import com.ego.manage.service.TbItemService;
 import com.ego.pojo.TbItem;
 import com.ego.pojo.TbItemDesc;
 import com.ego.pojo.TbItemParamItem;
+import com.ego.redis.dao.JedisDao;
 
 @Service
 public class TbItemServiceImpl implements TbItemService{
@@ -25,6 +28,15 @@ public class TbItemServiceImpl implements TbItemService{
 	
 	@Value("${search.url}")
 	private String url;
+	
+	@Resource
+	private JedisDao jedisDaoImpl;
+	
+	@Value("${redis.item.key}")
+	private String itemKey;
+	
+	@Value("${redis.desc.key}")
+	private String descKey;
 	
 	@Override
 	public EasyUIDataGrid show(int page, int rows) {
@@ -40,6 +52,11 @@ public class TbItemServiceImpl implements TbItemService{
 			item.setId(Long.parseLong(id));
 			item.setStatus(status);
 			index +=tbItemDubboServiceImpl.updItemStatus(item);
+			//下架和删除 从redis中删除key
+			if(status == 2 || status == 3) {
+				jedisDaoImpl.del(itemKey+id);
+				jedisDaoImpl.del(descKey+id);
+			}
 		}
 		if(index==idsStr.length){
 			return 1;

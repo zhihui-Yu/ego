@@ -9,6 +9,18 @@
 	<artifactId>commons</artifactId>
 
 	<dependencies>
+		<!-- servelt -->
+		<dependency>
+			<groupId>javax.servlet</groupId>
+			<artifactId>javax.servlet-api</artifactId>
+			<scope>provided</scope>
+		</dependency>
+		<!-- pojo -->
+		<dependency>
+			<groupId>com.ego</groupId>
+			<artifactId>pojo</artifactId>
+			<version>0.0.1-SNAPSHOT</version>
+		</dependency>
 		<!-- httpclient -->
 		<dependency>
 			<groupId>org.apache.httpcomponents</groupId>

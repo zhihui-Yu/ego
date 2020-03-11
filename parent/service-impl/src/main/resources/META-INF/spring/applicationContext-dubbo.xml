@@ -32,11 +32,17 @@
 	<dubbo:service interface="com.ego.dubbo.service.TbItemParamDubboService" ref="tbItemParamDubboServiceImpl"></dubbo:service>
 	<bean id="tbItemParamDubboServiceImpl" class="com.ego.dubbo.service.impl.TbItemParamDubboServiceImpl"></bean>
 	<!-- 内容分类  -->
-	<dubbo:service interface="com.ego.dubbo.service.TbContentCategoryDubboService" ref="TbContentCategoryDubboServiceImpl"></dubbo:service>
-	<bean id="TbContentCategoryDubboServiceImpl" class="com.ego.dubbo.service.impl.TbContentCategoryDubboServiceImpl"></bean>
+	<dubbo:service interface="com.ego.dubbo.service.TbContentCategoryDubboService" ref="tbContentCategoryDubboServiceImpl"></dubbo:service>
+	<bean id="tbContentCategoryDubboServiceImpl" class="com.ego.dubbo.service.impl.TbContentCategoryDubboServiceImpl"></bean>
 	<!-- 内容管理  -->
-	<dubbo:service interface="com.ego.dubbo.service.TbContentDubboService" ref="TbContentDubboServiceImpl"></dubbo:service>
-	<bean id="TbContentDubboServiceImpl" class="com.ego.dubbo.service.impl.TbContentDubboServiceImpl"></bean>
+	<dubbo:service interface="com.ego.dubbo.service.TbContentDubboService" ref="tbContentDubboServiceImpl"></dubbo:service>
+	<bean id="tbContentDubboServiceImpl" class="com.ego.dubbo.service.impl.TbContentDubboServiceImpl"></bean>
+	<!-- 商品规格参数  -->
+	<dubbo:service interface="com.ego.dubbo.service.TbItemParamItemDubboService" ref="tbItemParamItemDubboServiceImpl"></dubbo:service>
+	<bean id="tbItemParamItemDubboServiceImpl" class="com.ego.dubbo.service.impl.TbItemParamItemDubboServiceImpl"></bean>
+	<!-- 用户信息  -->
+	<dubbo:service interface="com.ego.dubbo.service.TbUserDubboService" ref="tbUserDubboServiceImpl"></dubbo:service>
+	<bean id="tbUserDubboServiceImpl" class="com.ego.dubbo.service.impl.TbUserDubboServiceImpl"></bean>
 	
 </beans>
 

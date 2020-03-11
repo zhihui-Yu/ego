@@ -9,6 +9,7 @@ import java.util.Map;
 import javax.annotation.Resource;
 
 import org.apache.solr.client.solrj.SolrQuery;
+import org.apache.solr.client.solrj.SolrQuery.ORDER;
 import org.apache.solr.client.solrj.SolrServerException;
 import org.apache.solr.client.solrj.impl.CloudSolrClient;
 import org.apache.solr.client.solrj.response.QueryResponse;
@@ -59,6 +60,7 @@ public class TbItemServiceImpl implements TbItemService{
 			doc.addField("item_image", item.getImage());
 			doc.addField("item_category_name", itemCat.getName());
 			doc.addField("item_desc", itemDesc.getItemDesc());
+			doc.setField("item_update", item.getUpdated());
 			
 			solrClient.add(doc);
 		}
@@ -78,6 +80,9 @@ public class TbItemServiceImpl implements TbItemService{
 		
 		//设置查询条件 query加""为精确查询  否则为模糊查询
 		params.setQuery("item_keywords:"+query);
+		
+		//设置排序
+		params.setSort("item_update", ORDER.desc);
 		
 		//设置高亮
 		params.setHighlight(true);

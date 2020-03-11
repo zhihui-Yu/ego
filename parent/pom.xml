@@ -26,9 +26,16 @@
 		<ftpclient-version>3.3</ftpclient-version>
 		<solr-version>5.3.1</solr-version>
 		<httpclient-version>4.4.1</httpclient-version>
+		<myredis-version>0.0.1-SNAPSHOT</myredis-version>
 	</properties>
 	<dependencyManagement>
 		<dependencies>
+			<!-- redis依赖 -->
+			<dependency>
+				<groupId>com.ego</groupId>
+				<artifactId>redis</artifactId>
+				<version>${myredis-version}</version>
+			</dependency>
 			<!-- httpclient -->
 			<dependency>
 				<groupId>org.apache.httpcomponents</groupId>
@@ -59,12 +66,14 @@
 				<artifactId>jedis</artifactId>
 				<version>${jedis-version}</version>
 			</dependency>
+			<!-- servlet -->
 			<dependency>
 				<groupId>javax.servlet</groupId>
 				<artifactId>javax.servlet-api</artifactId>
 				<version>${servlet-version}</version>
 				<scope>provided</scope>
 			</dependency>
+			<!-- jsp -->
 			<dependency>
 				<groupId>javax.servlet.jsp</groupId>
 				<artifactId>jsp-api</artifactId>
@@ -195,5 +204,6 @@
 		<module>redis</module>
 		<module>search</module>
 		<module>commons</module>
+		<module>passport</module>
 	</modules>
 </project>

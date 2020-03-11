@@ -10,6 +10,11 @@
 	<packaging>war</packaging>
 
 	<dependencies>
+		<!-- redis 依赖 -->
+		<dependency>
+			<groupId>com.ego</groupId>
+			<artifactId>redis</artifactId>
+		</dependency>
 		<!-- 分页插件 -->
 		<dependency>
 			<groupId>com.github.pagehelper</groupId>

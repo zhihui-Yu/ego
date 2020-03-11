@@ -30,4 +30,12 @@ public interface JedisDao {
 	 * @return
 	 */
 	String get(String key);
+	
+	/**
+	 * 设置过期时间
+	 * @param key
+	 * @param time
+	 * @return
+	 */
+	long expire (String key,int time);
 }
