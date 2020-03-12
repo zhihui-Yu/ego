@@ -24,13 +24,14 @@ public class TbUserController {
 	
 	/**
 	 * 显示登入页面
-	 * @param url
+	 * @param url 点击登入前的页面
 	 * @param model
+	 * @param interurl 重定向的页面
 	 * @return
-	 */				 
+	 */
 	@RequestMapping("user/showLogin")
-	public String showLogin(@RequestHeader("Referer") String url, Model model) {
-		model.addAttribute("redirect",url);
+	public String showLogin(@RequestHeader(value="Referer",defaultValue="") String url, Model model, String interurl) {
+		model.addAttribute("redirect",url.equals("")?interurl:url);
 		return "login";
 	}
 	

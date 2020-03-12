@@ -205,5 +205,6 @@
 		<module>search</module>
 		<module>commons</module>
 		<module>passport</module>
+		<module>cart</module>
 	</modules>
 </project>
