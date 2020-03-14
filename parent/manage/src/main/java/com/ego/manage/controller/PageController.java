@@ -10,6 +10,11 @@ public class PageController {
 	public String welcome(){
 		return "index";
 	}
+	/**
+	 * 显示页面
+	 * @param page
+	 * @return
+	 */
 	@RequestMapping("{page}")
 	public String showPage(@PathVariable String page){
 		return page;

@@ -34,7 +34,7 @@ public class TbItemDescServiceImpl implements TbItemDescService {
 		}
 		
 		String desc = tbItemDescDubboServiceImpl.selByItemid(itemid).getItemDesc();
-		jedisDaoImpl.set(key, desc);
+		jedisDaoImpl.set(key, desc==null?"":desc);
 		
 		return desc;
 	}

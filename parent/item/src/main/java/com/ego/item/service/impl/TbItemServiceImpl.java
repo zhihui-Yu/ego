@@ -12,7 +12,6 @@ import com.ego.dubbo.service.TbItemDubboService;
 import com.ego.item.service.TbItemService;
 import com.ego.pojo.TbItem;
 import com.ego.redis.dao.JedisDao;
-import com.ego.redis.dao.impl.JedisDaoImpl;
 
 @Service
 public class TbItemServiceImpl implements TbItemService{

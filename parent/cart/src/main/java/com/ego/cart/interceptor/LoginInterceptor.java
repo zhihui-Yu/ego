@@ -20,7 +20,7 @@ public class LoginInterceptor implements HandlerInterceptor {
 		
 		//已经登入
 		if(token != null && !token.equals("")) {
-			String json = HttpClientUtil.doPost("http://localhost:8084/usr/token/"+token);
+			String json = HttpClientUtil.doPost("http://localhost:8084/user/token/"+token);
 			
 			EgoResult er = JsonUtils.jsonToPojo(json, EgoResult.class);
 			
@@ -33,8 +33,11 @@ public class LoginInterceptor implements HandlerInterceptor {
 		//获取传入的参数
 		String num = request.getParameter("num");
 
-		//发送登入后重定向的url 以及num 数量
-		response.sendRedirect("http://localhost:8084/user/showLogin?interurl"+request.getRequestURL()+"%3Fnum="+num);
+		if(num!=null&&!num.equals("")){
+			response.sendRedirect("http://localhost:8084/user/showLogin?interurl="+request.getRequestURL()+"%3Fnum="+num);
+		}else{
+			response.sendRedirect("http://localhost:8084/user/showLogin");
+		}
 		return false;
 	}
 

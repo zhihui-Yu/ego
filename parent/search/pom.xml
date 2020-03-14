@@ -9,6 +9,12 @@
 	<artifactId>search</artifactId>
 	<packaging>war</packaging>
 	<dependencies>
+		<!-- commons -->
+		<dependency>
+			<groupId>com.ego</groupId>
+			<artifactId>commons</artifactId>
+			<version>0.0.1-SNAPSHOT</version>
+		</dependency>
 		<!-- solr -->
 		<dependency>
 			<groupId>org.apache.solr</groupId>

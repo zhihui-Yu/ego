@@ -206,5 +206,6 @@
 		<module>commons</module>
 		<module>passport</module>
 		<module>cart</module>
+		<module>order</module>
 	</modules>
 </project>

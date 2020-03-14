@@ -60,7 +60,7 @@ public class TbUserServiceImpl implements TbUserService {
 		} else {
 			er.setMsg("获取失败");
 		}
-		return null;
+		return er;
 	}
 
 	@Override
