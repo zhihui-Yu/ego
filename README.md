@@ -8,6 +8,8 @@
 5. solr 和 IK 分词器提高搜索模块的性能。 
 6. HttpCilent+NGINX+VSFTPD 实现图片缓存。 
 7. MyBatis 插件 pageHelper 实现分页查询。
+8. solr cloud 集群提高系统性能
+9. tomcat集群+mycat分库
 ### 功能
 1. 商品信息管理
 2. 商城大广告管理
