@@ -25,7 +25,7 @@
 		<pagehelper-version>4.1.6</pagehelper-version>
 		<ftpclient-version>3.3</ftpclient-version>
 		<solr-version>5.3.1</solr-version>
-		<httpclient-version>4.4.1</httpclient-version>
+		<httpclient-version>4.5.13</httpclient-version>
 		<myredis-version>0.0.1-SNAPSHOT</myredis-version>
 		<java.version>1.7</java.version>
 	</properties>
